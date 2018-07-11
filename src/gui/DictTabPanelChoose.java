@@ -1,27 +1,57 @@
 package gui;
 
+import process.DictProcessAdd;
+import process.DictProcessChoose;
+
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Vector;
 
 public class DictTabPanelChoose extends JPanel
 {
+    JTextField search = new JTextField(40);
+    JTable table;
     DefaultListModel<String> model = new DefaultListModel<>();
     JList<String> list = new JList<>(model);
-    JTextField jt = new JTextField("",40);
-    Button next = new Button("Next >>");
+    JFrame jf;
 
-    public DictTabPanelChoose()
+    public DictTabPanelChoose(JFrame jf)
     {
-        JPanel endPanel = new JPanel();
-        endPanel.setLayout(new FlowLayout());
+        this.jf = jf;
+        setUpUi();
+        addChild();
 
-        endPanel.add(jt);
-        endPanel.add(next);
-
-        setLayout(new BorderLayout());
-        add(list, BorderLayout.CENTER);
-        add(endPanel, BorderLayout.PAGE_END);
-
-        SwingUtilities.invokeLater(() -> jt.requestFocus());
+        final DictProcessChoose addProcess = new DictProcessChoose(jf);
+        search.addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent ae)
+            {
+                addProcess.process(model, search.getText());
+            }
+        });
+        addProcess.process(model, search.getText());
     }
+
+    private void setUpUi()
+    {
+        setSize(jf.getWidth(),jf.getHeight());
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+
+        search.setMaximumSize( search.getPreferredSize() );
+    }
+
+    private void addChild(){
+        add(search);
+
+        JScrollPane jsp = new JScrollPane(list);
+        jsp.setBackground(Color.blue);
+        jsp.setSize(getWidth(),getHeight());
+        add(jsp);
+    }
+
+
 }

@@ -11,10 +11,15 @@ public class DictTabPanelPlay extends JPanel
     JList<String> list = new JList<>(model);
     JTextField jt = new JTextField("",40);
     Button next = new Button("Next >>");
+    JFrame jf;
 
-    public DictTabPanelPlay()
+    public DictTabPanelPlay(JFrame jf)
     {
         /////
+        this.jf = jf;
+        DictProcessPlay processPlay = new DictProcessPlay(jf);
+
+
         JPanel endPanel = new JPanel();
         endPanel.setLayout(new FlowLayout());
 
@@ -26,11 +31,8 @@ public class DictTabPanelPlay extends JPanel
         add(endPanel, BorderLayout.PAGE_END);
 
         SwingUtilities.invokeLater(() -> jt.requestFocus());
-    }
 
-    public void doBusinessLogic(DictProcessPlay dv)
-    {
-        dv.process(model, list, jt, next);
+        processPlay.process(model, list, jt, next);
     }
 
 }

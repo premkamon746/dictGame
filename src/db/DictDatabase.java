@@ -5,6 +5,7 @@ import model.Question;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Vector;
 
 public class DictDatabase
 {
@@ -41,9 +42,10 @@ public class DictDatabase
 
     }
 
-    public String[][] getSearch(String search)
+    public  Vector<Vector<String>> getSearch(String search)
     {
-        String [][]b = new String[20][3];
+        //String [][]b = new String[20][3];
+        Vector<Vector<String>> b = new Vector<Vector<String>>();
         Connection connect  = connect();
         if(connect instanceof Connection)
         {
@@ -66,10 +68,65 @@ public class DictDatabase
                 int i = 0;
                 while (resultSet.next())
                 {
-                    b[i][0] = resultSet.getString("thai");
-                    b[i][1] = resultSet.getString("english");
-                    b[i][2] = resultSet.getString("group_name");
+                    Vector<String> v = new Vector<String>();
+                    v.add(resultSet.getString("thai"));
+                    v.add(resultSet.getString("english"));
+                    v.add(resultSet.getString("group_name"));
+                    b.add(v);
+
                 }
+
+
+                statement = connect.createStatement();
+                resultSet = statement.executeQuery(sql);
+            }
+            catch (SQLException e)
+            {
+                e.printStackTrace();
+            }
+
+            try {
+                resultSet.close();
+                statement.close();
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return b;
+    }
+
+
+    public  Vector<Vector<String>> getSearchGroup(String search)
+    {
+        //String [][]b = new String[20][3];
+        Vector<Vector<String>> b = new Vector<Vector<String>>();
+        Connection connect  = connect();
+        if(connect instanceof Connection)
+        {
+            ResultSet resultSet = null;
+            Statement statement = null;
+
+            String where = "";
+            if(!search.isEmpty()) {
+                where = "and group_name like '%" + search + "%' ";
+            }
+
+            String sql = "SELECT * FROM GAME  WHERE 1=1 "+ where +" and group_name != '' group by group_name limit 20";
+
+            try {
+                statement = connect.createStatement();
+                resultSet = statement.executeQuery(sql);
+
+                int i = 0;
+                while (resultSet.next())
+                {
+                    Vector<String> v = new Vector<String>();
+                    v.add(resultSet.getString("group_name"));
+                    b.add(v);
+
+                }
+
 
                 statement = connect.createStatement();
                 resultSet = statement.executeQuery(sql);
