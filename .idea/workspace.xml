@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53f52157-b2ff-4951-b625-3a12944c2fab" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/process/DictProcessChoose.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/dict.db" beforeDir="false" afterPath="$PROJECT_DIR$/database/dict.db" afterDir="false" />
@@ -12,11 +11,13 @@
       <change beforePath="$PROJECT_DIR$/out/production/dictGame/gui/DictTab.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dictGame/gui/DictTab.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/dictGame/gui/DictTabPanelAdd$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dictGame/gui/DictTabPanelAdd$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/dictGame/gui/DictTabPanelAdd.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dictGame/gui/DictTabPanelAdd.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dictGame/gui/DictTabPanelChoose$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dictGame/gui/DictTabPanelChoose$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/dictGame/gui/DictTabPanelChoose.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dictGame/gui/DictTabPanelChoose.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/dictGame/gui/DictTabPanelPlay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dictGame/gui/DictTabPanelPlay.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/dictGame/gui/MyDialog.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dictGame/gui/MyDialog.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/dictGame/model/Question.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dictGame/model/Question.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/dictGame/process/DictProcessAdd.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dictGame/process/DictProcessAdd.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dictGame/process/DictProcessChoose.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dictGame/process/DictProcessChoose.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/dictGame/process/DictProcessPlay$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dictGame/process/DictProcessPlay$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/dictGame/process/DictProcessPlay$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dictGame/process/DictProcessPlay$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/dictGame/process/DictProcessPlay$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dictGame/process/DictProcessPlay$3.class" afterDir="false" />
@@ -26,7 +27,8 @@
       <change beforePath="$PROJECT_DIR$/src/gui/DictTabPanelAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/DictTabPanelAdd.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/DictTabPanelChoose.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/DictTabPanelChoose.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/DictTabPanelPlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/DictTabPanelPlay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/process/DictProcessAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/process/DictProcessAdd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/process/DictProcessChoose.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/process/DictProcessChoose.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/process/DictProcessPlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/process/DictProcessPlay.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,11 +40,60 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="DictDatabase.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/db/DictDatabase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="145">
+              <caret line="195" column="14" selection-start-line="195" selection-start-column="14" selection-end-line="195" selection-end-column="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DictTab.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gui/DictTab.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="177">
+              <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#247#255#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DictTabPanelChoose.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/gui/DictTabPanelChoose.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="104">
+              <caret line="33" column="71" lean-forward="true" selection-start-line="33" selection-start-column="71" selection-end-line="33" selection-end-column="71" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DictProcessChoose.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/process/DictProcessChoose.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="188">
+              <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="DictTabPanelPlay.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gui/DictTabPanelPlay.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="28" column="20" lean-forward="true" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="36" />
+            <state relative-caret-position="131">
+              <caret line="18" column="66" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -53,32 +104,8 @@
       <file leaf-file-name="DictProcessPlay.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/process/DictProcessPlay.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="75" column="4" selection-start-line="75" selection-start-column="4" selection-end-line="88" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DictTabPanelAdd.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/gui/DictTabPanelAdd.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="543">
-              <caret line="82" column="90" selection-start-line="82" selection-start-column="90" selection-end-line="82" selection-end-column="90" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DictProcessAdd.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/process/DictProcessAdd.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="11" selection-end-column="14" />
+            <state relative-caret-position="142">
+              <caret line="81" column="35" selection-start-line="81" selection-start-column="24" selection-end-line="81" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -104,6 +131,7 @@
       <find>getSearch</find>
       <find>b</find>
       <find>addDict</find>
+      <find>sys</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -120,32 +148,30 @@
         <option value="$PROJECT_DIR$/src/gui/MyDialog.java" />
         <option value="$PROJECT_DIR$/src/process/DictPlayProcess.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/process/DictProcessPlay.java" />
-        <option value="$PROJECT_DIR$/src/gui/DictTab.java" />
         <option value="$PROJECT_DIR$/src/gui/DictFrame.java" />
-        <option value="$PROJECT_DIR$/src/gui/DictTabPanelPlay.java" />
         <option value="$PROJECT_DIR$/src/process/DictProcessAdd.java" />
+        <option value="$PROJECT_DIR$/src/gui/UiModel.java" />
+        <option value="$PROJECT_DIR$/src/gui/DictTabPanelAdd.java" />
+        <option value="$PROJECT_DIR$/src/gui/DictTab.java" />
+        <option value="$PROJECT_DIR$/src/gui/DictTabPanelPlay.java" />
+        <option value="$PROJECT_DIR$/src/process/DictProcessPlay.java" />
         <option value="$PROJECT_DIR$/src/db/DictDatabase.java" />
         <option value="$PROJECT_DIR$/src/process/DictProcessChoose.java" />
-        <option value="$PROJECT_DIR$/src/gui/UiModel.java" />
         <option value="$PROJECT_DIR$/src/gui/DictTabPanelChoose.java" />
-        <option value="$PROJECT_DIR$/src/gui/DictTabPanelAdd.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="-1608" />
+    <option name="y" value="-140" />
+    <option name="width" value="1616" />
+    <option name="height" value="916" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -191,7 +217,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -287,7 +315,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-1608" y="-140" width="1616" height="916" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -295,27 +324,27 @@
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5015625" side_tool="true" weight="0.32731137" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.3425" side_tool="true" visible="true" weight="0.42450494" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.498125" weight="0.424017" />
       <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.6575" visible="true" weight="0.42450494" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15833333" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.158125" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="3" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39975247" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="Nl-Palette" order="0" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Properties" order="2" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.499375" weight="0.32920793" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
     </layout>
   </component>
@@ -323,6 +352,93 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/gui/DictTabPanelPlay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/db/DictDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2176">
+          <caret line="128" lean-forward="true" selection-start-line="128" selection-end-line="128" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/DictTabPanelAdd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2346">
+          <caret line="138" column="23" lean-forward="true" selection-start-line="138" selection-start-column="23" selection-end-line="138" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/DictFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/process/DictProcessPlay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="75" column="4" selection-start-line="75" selection-start-column="4" selection-end-line="88" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/DictTabPanelPlay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/process/DictProcessPlay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="75" column="4" selection-start-line="75" selection-start-column="4" selection-end-line="88" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/process/DictProcessAdd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="11" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/DictTabPanelAdd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1394">
+          <caret line="82" column="90" selection-start-line="82" selection-start-column="90" selection-end-line="82" selection-end-column="90" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/DictTabPanelPlay.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -515,20 +631,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/DictFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/DictTab.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -554,16 +656,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/process/DictProcessPlay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="75" column="4" selection-start-line="75" selection-start-column="4" selection-end-line="88" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/awt/Container.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
@@ -571,10 +663,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/UiModel.java" />
+    <entry file="file://$PROJECT_DIR$/src/process/DictProcessAdd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="11" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/DictFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/DictTabPanelAdd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="134" column="68" lean-forward="true" selection-start-line="134" selection-start-column="68" selection-end-line="134" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/DictTabPanelPlay.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="28" column="20" lean-forward="true" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="36" />
+        <state relative-caret-position="131">
+          <caret line="18" column="66" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/process/DictProcessPlay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="81" column="35" selection-start-line="81" selection-start-column="24" selection-end-line="81" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/DictTab.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#247#255#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/db/DictDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="195" column="14" selection-start-line="195" selection-start-column="14" selection-end-line="195" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -583,27 +734,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/process/DictProcessChoose.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#110#111#0" expanded="true" />
-            <element signature="e#138#139#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/UiModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/db/DictDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="579">
-          <caret line="113" lean-forward="true" selection-start-line="113" selection-end-line="113" />
+        <state relative-caret-position="188">
+          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -612,30 +744,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/DictTabPanelChoose.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="43" column="8" lean-forward="true" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1263#1264#0" expanded="true" />
-            <element signature="e#1338#1339#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/process/DictProcessAdd.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="11" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/DictTabPanelAdd.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="82" column="90" selection-start-line="82" selection-start-column="90" selection-end-line="82" selection-end-column="90" />
+        <state relative-caret-position="104">
+          <caret line="33" column="71" lean-forward="true" selection-start-line="33" selection-start-column="71" selection-end-line="33" selection-end-column="71" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -682,7 +792,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.8</last-edited>
+          <last-edited>10</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

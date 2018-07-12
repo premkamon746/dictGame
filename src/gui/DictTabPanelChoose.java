@@ -4,6 +4,8 @@ import process.DictProcessAdd;
 import process.DictProcessChoose;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -18,9 +20,14 @@ public class DictTabPanelChoose extends JPanel
     JList<String> list = new JList<>(model);
     JFrame jf;
 
-    public DictTabPanelChoose(JFrame jf)
+    DefaultListModel<String> modelSelect = new DefaultListModel<>();
+    JList<String> listSelect = new JList<>(modelSelect);
+    private Vector<String> vSelectList;
+
+    public DictTabPanelChoose(JFrame jf,Vector<String> vSelectList )
     {
         this.jf = jf;
+        this.vSelectList = vSelectList;
         setUpUi();
         addChild();
 
@@ -30,10 +37,47 @@ public class DictTabPanelChoose extends JPanel
             @Override
             public void actionPerformed(ActionEvent ae)
             {
+                list.clearSelection();
                 addProcess.process(model, search.getText());
             }
         });
         addProcess.process(model, search.getText());
+
+        list.addListSelectionListener(new ListSelectionListener() {
+
+            @Override
+            public void valueChanged(ListSelectionEvent arg0) {
+                if (!arg0.getValueIsAdjusting()) {
+                    vSelectList.add(list.getSelectedValue().toString());
+                    addItemToSelectedList();
+                }
+            }
+        });
+
+
+        listSelect.addListSelectionListener(new ListSelectionListener() {
+
+            @Override
+            public void valueChanged(ListSelectionEvent arg0) {
+                if (!arg0.getValueIsAdjusting()) {
+                    int selectIdx = listSelect.getSelectedIndex();
+                    if (selectIdx != -1)
+                    {
+                        vSelectList.remove(selectIdx);
+                        addItemToSelectedList();
+                    }
+                }
+            }
+        });
+    }
+
+    private void addItemToSelectedList()
+    {
+        modelSelect.clear();
+        for(int i = 0; i < vSelectList.size(); i++)
+        {
+            modelSelect.addElement(vSelectList.get(i));
+        }
     }
 
     private void setUpUi()
@@ -50,7 +94,12 @@ public class DictTabPanelChoose extends JPanel
         JScrollPane jsp = new JScrollPane(list);
         jsp.setBackground(Color.blue);
         jsp.setSize(getWidth(),getHeight());
+
+        add(new JLabel("choose from : "));
         add(jsp);
+
+        add(new JLabel("selected : "));
+        add(listSelect);
     }
 
 

@@ -18,12 +18,13 @@ public class DictProcessChoose
 
     public void  process(DefaultListModel model, String search)
     {
+        System.out.println(search);
         Vector<Vector<String>>result = db.getSearchGroup(search);
 
         model.clear();
         for(int i = 0; i < result.size(); i++)
         {
-            model.addElement(i+1+". "+result.get(i).get(0));
+            model.addElement(result.get(i).get(0));
         }
 
     }

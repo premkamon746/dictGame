@@ -16,10 +16,10 @@ public class DictDatabase
 
     }
 
-    public Question getData(){
+    public Question getData(Vector<String>  vSelectList){
         Connection connect = connect();
-        getRandomWord(connect);
-        getChoice(connect, qs.getAnswer());
+        getRandomWord(connect, vSelectList);
+        getChoice(connect, qs.getAnswer(), vSelectList);
         return qs;
     }
 
@@ -59,7 +59,7 @@ public class DictDatabase
                         "or group_name like '%" + search + "%' )";
             }
 
-            String sql = "SELECT * FROM GAME  WHERE 1=1 "+ where +" limit 20";
+            String sql = "SELECT * FROM GAME  WHERE 1=1 "+ where +"  order by id desc limit 20";
 
             try {
                 statement = connect.createStatement();
@@ -112,7 +112,7 @@ public class DictDatabase
                 where = "and group_name like '%" + search + "%' ";
             }
 
-            String sql = "SELECT * FROM GAME  WHERE 1=1 "+ where +" and group_name != '' group by group_name limit 20";
+            String sql = "SELECT * FROM GAME  WHERE 1=1 "+ where +" and group_name != '' group by group_name order by id desc limit 20";
 
             try {
                 statement = connect.createStatement();
@@ -127,9 +127,6 @@ public class DictDatabase
 
                 }
 
-
-                statement = connect.createStatement();
-                resultSet = statement.executeQuery(sql);
             }
             catch (SQLException e)
             {
@@ -147,7 +144,37 @@ public class DictDatabase
         return b;
     }
 
-    private void getRandomWord(Connection connection )
+    public  void saveDict(String thai, String english, String group, String ex_sentence)
+    {
+        Connection connect  = connect();
+        if(connect instanceof Connection)
+        {
+            ResultSet resultSet = null;
+            Statement statement = null;
+
+            String sql = "INSERT INTO GAME (thai, english, group_name, ex_sentence) VALUES ('"+thai+"','"+english+"','"+group+"','"+ex_sentence+"')";
+
+            try {
+                statement = connect.createStatement();
+                statement.executeQuery(sql);
+
+            }
+            catch (SQLException e)
+            {
+                e.printStackTrace();
+            }
+
+            try {
+                resultSet.close();
+                statement.close();
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void getRandomWord(Connection connection, Vector<String>  vSelectList)
     {
 
         if(connection instanceof Connection)
@@ -155,7 +182,18 @@ public class DictDatabase
             ResultSet resultSet = null;
             Statement statement = null;
 
-            String sql = "SELECT * FROM GAME  ORDER BY RANDOM() LIMIT 1";
+            String groupSearch = "";
+            if(vSelectList.size() > 0)
+            {
+                groupSearch = "where group_name='";
+                groupSearch += String.join("' or group_name= '", vSelectList);
+                groupSearch += "'";
+            }
+
+
+            String sql = "SELECT * FROM GAME   "+groupSearch+" ORDER BY RANDOM() LIMIT 1";
+            //String sql = "SELECT * FROM GAME ORDER BY RANDOM() LIMIT 1";
+            //System.out.println(sql);
             try {
                 statement = connection.createStatement();
                 resultSet = statement.executeQuery(sql);
@@ -168,8 +206,6 @@ public class DictDatabase
                     qs.setAnswer(answer);
                 }
 
-                statement = connection.createStatement();
-                resultSet = statement.executeQuery(sql);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -185,15 +221,29 @@ public class DictDatabase
     }
 
 
-    private void getChoice(Connection connection,String answer )
+    private void getChoice(Connection connection,String answer, Vector<String>  vSelectList )
     {
         ArrayList<String> item = qs.getItem();
         item.clear();
+
+
+
         if(connection instanceof Connection)
         {
             ResultSet resultSet = null;
             Statement statement = null;
-            String sql = "SELECT * FROM GAME WHERE english != '" + answer + "' ORDER BY RANDOM() LIMIT 4";
+
+            String groupSearch = "";
+            if(vSelectList.size() > 0) {
+                groupSearch = "and (group_name='";
+                groupSearch += String.join("' or  group_name = '", vSelectList);
+                groupSearch += "')";
+            }
+
+
+
+            String sql = "SELECT * FROM GAME WHERE english != '" + answer + "' "+groupSearch+" ORDER BY RANDOM() LIMIT 4";
+            //System.out.println(sql);
             try {
                 statement = connection.createStatement();
                 resultSet = statement.executeQuery(sql);
@@ -239,4 +289,6 @@ public class DictDatabase
             System.out.print("can't connect");
         }
     }
+
+
 }

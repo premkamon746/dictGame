@@ -9,6 +9,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Vector;
 
 public class DictProcessPlay {
 
@@ -21,10 +22,12 @@ public class DictProcessPlay {
     private DictDatabase db = new DictDatabase();
     JFrame jf;
     private MyDialog myDialog;
+    Vector<String>  vSelectList;
 
-    public DictProcessPlay(JFrame jf)
+    public DictProcessPlay(JFrame jf,Vector<String> vSelectList)
     {
         this.jf = jf;
+        this.vSelectList = vSelectList;
         myDialog = new MyDialog(jf, "alert");
     }
 
@@ -55,7 +58,8 @@ public class DictProcessPlay {
                 {
                     myDialog.setTitle("ok");
                 }
-                else {
+                else
+                {
                     myDialog.setTitle("fail");
                 }
                 myDialog.setVisible(true);
@@ -75,7 +79,7 @@ public class DictProcessPlay {
     //get new question
     private void addDataTolist()
     {
-        qs = db.getData();
+        qs = db.getData(vSelectList);
         model.clear();
         jt.setText("");
         ArrayList<String> choice  = qs.getItem();

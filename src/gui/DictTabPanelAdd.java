@@ -17,13 +17,15 @@ public class DictTabPanelAdd extends JPanel
     JTable table;
     DefaultTableModel model = new DefaultTableModel();
     JFrame jf;
+    MyDialog alertDialog;
+    final DictProcessAdd addProcess;
 
     JPanel addDict = new JPanel();
 
     public DictTabPanelAdd(JFrame jf)
     {
         this.jf = jf;
-
+        alertDialog = new MyDialog(jf,"message");
 
         table = new JTable();
         table.setModel(model);
@@ -31,7 +33,7 @@ public class DictTabPanelAdd extends JPanel
         setUpUi();
         addChild();
 
-        final DictProcessAdd addProcess = new DictProcessAdd(jf);
+        addProcess = new DictProcessAdd(jf);
         search.addActionListener(new ActionListener()
         {
             @Override
@@ -47,12 +49,16 @@ public class DictTabPanelAdd extends JPanel
         addProcess.process(model, search.getText());
     }
 
-    private void setUpUi(){
+    private void setUpUi()
+    {
        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
        search.setMaximumSize( search.getPreferredSize() );
 
         SpringLayout layout = new SpringLayout();
+        //addDict.setBorder(BorderFactory.createEmptyBorder(0,10,10,10));
         addDict.setLayout(layout);
+
+        //addDict.setBorder(BorderFactory.createTitledBorder("Add New"));
 
         JLabel thaiLabel = new JLabel("Thai: ");
         JTextField thaiText = new JTextField(40);
@@ -82,6 +88,60 @@ public class DictTabPanelAdd extends JPanel
 
         layout.putConstraint(SpringLayout.NORTH, grpText, 25, SpringLayout.SOUTH, engLabel);
         layout.putConstraint(SpringLayout.WEST, grpText, 50,  SpringLayout.EAST, thaiLabel);
+
+
+        JLabel exSent = new JLabel("Ex Sent: ");
+        JTextField exSentText = new JTextField(40);
+        addDict.add(exSent);
+        addDict.add(exSentText);
+        layout.putConstraint(SpringLayout.NORTH, exSent, 25, SpringLayout.SOUTH, grpLabel);
+        layout.putConstraint(SpringLayout.WEST, exSent, 25, SpringLayout.WEST, addDict);
+
+        layout.putConstraint(SpringLayout.NORTH, exSentText, 25, SpringLayout.SOUTH, grpLabel);
+        layout.putConstraint(SpringLayout.WEST, exSentText, 50,  SpringLayout.EAST, thaiLabel);
+
+
+        JButton submit = new JButton("save");
+        addDict.add(submit);
+
+        layout.putConstraint(SpringLayout.NORTH, submit, 25, SpringLayout.SOUTH, exSent);
+        layout.putConstraint(SpringLayout.WEST, submit, 25, SpringLayout.WEST, addDict);
+
+        final JLabel message = new JLabel();
+        addDict.add(message);
+
+        layout.putConstraint(SpringLayout.NORTH, message, 25, SpringLayout.SOUTH, grpText);
+        layout.putConstraint(SpringLayout.WEST, message, 50,  SpringLayout.EAST, thaiLabel);
+
+        submit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String eng      = engText.getText();
+                String thai     = thaiText.getText();
+                String grp      = grpText.getText();
+                String sent      = exSentText.getText();
+                System.out.print(eng+thai+grp);
+                message.setText("");
+                if(eng.isEmpty() || thai.isEmpty()){
+                    message.setText("thai and english can't not be empty.");
+                    message.setForeground(Color.RED);
+                }else{
+                    DictDatabase db = new DictDatabase();
+                    try
+                    {
+                        db.saveDict(thai, eng, grp, sent);
+                        model.setRowCount(0);
+                        model.setColumnCount(0);
+                        addProcess.process(model, search.getText());
+                    }
+                    catch (Exception excp)
+                    {
+                        alertDialog.setVisible(true);
+                    }
+                }
+            }
+        });
+
 
 
     }

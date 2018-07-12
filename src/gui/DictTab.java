@@ -2,6 +2,7 @@ package gui;
 
 
 import javax.swing.*;
+import java.util.Vector;
 
 public class DictTab extends JTabbedPane
 {
@@ -9,13 +10,14 @@ public class DictTab extends JTabbedPane
     DictTabPanelPlay play;
     DictTabPanelChoose choose;
     DictTabPanelAdd add;
+    Vector<String> vSelectList = new Vector<String>();
 
 
     public DictTab(JFrame jf)
     {
         this.jf = jf;
-        play        = new DictTabPanelPlay(jf);
-        choose      = new DictTabPanelChoose(jf);
+        play        = new DictTabPanelPlay(jf, vSelectList);
+        choose      = new DictTabPanelChoose(jf, vSelectList);
         add         = new DictTabPanelAdd(jf);
 
         addTab("Play", null, play, "play dict game.");

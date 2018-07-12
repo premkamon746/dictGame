@@ -4,6 +4,7 @@ import process.DictProcessPlay;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Vector;
 
 public class DictTabPanelPlay extends JPanel
 {
@@ -12,12 +13,15 @@ public class DictTabPanelPlay extends JPanel
     JTextField jt = new JTextField("",40);
     Button next = new Button("Next >>");
     JFrame jf;
+    Vector<String>  vSelectList;
 
-    public DictTabPanelPlay(JFrame jf)
+
+    public DictTabPanelPlay(JFrame jf, Vector<String>  vSelectList)
     {
         /////
         this.jf = jf;
-        DictProcessPlay processPlay = new DictProcessPlay(jf);
+        this.vSelectList = vSelectList;
+        DictProcessPlay processPlay = new DictProcessPlay(jf, vSelectList);
 
 
         JPanel endPanel = new JPanel();
