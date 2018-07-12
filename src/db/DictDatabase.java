@@ -11,9 +11,14 @@ public class DictDatabase
 {
 
     private Question qs = new Question();
+    String lang = "thai";
 
     public DictDatabase(){
 
+    }
+
+    public void setLang(String lang){
+        this.lang = lang;
     }
 
     public Question getData(Vector<String>  vSelectList){
@@ -200,9 +205,14 @@ public class DictDatabase
 
                 while (resultSet.next())
                 {
-                    String question = resultSet.getString("thai");
+                    String[] selectLang = {"thai", "english"};
+                    if(lang == "english") {
+                        selectLang[0] = "english";
+                        selectLang[1] = "thai";
+                    }
+                    String question = resultSet.getString(selectLang[0]);
                     qs.setQuestion(question);
-                    String answer = resultSet.getString("english");
+                    String answer = resultSet.getString(selectLang[1]);
                     qs.setAnswer(answer);
                 }
 
@@ -262,7 +272,15 @@ public class DictDatabase
                         item.add(answer);
 
                     }
-                    item.add(resultSet.getString("english"));
+
+                    if(lang == "thai") //select answer in english
+                    {
+                        item.add(resultSet.getString("english"));
+                    }
+                    else //select answer in thai
+                    {
+                        item.add(resultSet.getString("thai"));
+                    }
                     count++;
                 }
 

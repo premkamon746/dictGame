@@ -5,6 +5,8 @@ import gui.MyDialog;
 import model.Question;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -29,6 +31,14 @@ public class DictProcessPlay {
         this.jf = jf;
         this.vSelectList = vSelectList;
         myDialog = new MyDialog(jf, "alert");
+    }
+
+    public void setThai(){
+        db.setLang("thai");
+    }
+
+    public void setEnglish(){
+        db.setLang("english");
     }
 
     public void process(DefaultListModel<String> model, JList<String> list, JTextField jt, Button next)
@@ -74,10 +84,41 @@ public class DictProcessPlay {
             }
         });
 
+        list.addListSelectionListener(new ListSelectionListener() {
+
+            @Override
+            public void valueChanged(ListSelectionEvent arg0) {
+                if (!arg0.getValueIsAdjusting())
+                {
+                    try {
+                        String selectText = list.getSelectedValue().toString();
+                        //String[] values = selectText.split("\\s+");
+
+                        String content = selectText.substring(selectText.indexOf(' ') + 1);
+
+                        //do stuff here when enter pressed
+                        System.out.println(content+" "+qs.getAnswer());
+                        if (content.trim().equals(qs.getAnswer())) {
+                            myDialog.setTitle("ok");
+                        } else {
+                            myDialog.setTitle("fail");
+                        }
+                        myDialog.setVisible(true);
+
+                    }
+                    catch (NullPointerException e)
+                    {
+
+                    }
+
+                }
+            }
+        });
+
     }
 
     //get new question
-    private void addDataTolist()
+    public void addDataTolist()
     {
         qs = db.getData(vSelectList);
         model.clear();
