@@ -8,7 +8,7 @@ public class DictFrame extends JFrame
 
     public DictFrame()
     {
-        super("Remember Word Game");
+        super("OnSas Game");
         setSize(600, 600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
