@@ -6,35 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53f52157-b2ff-4951-b625-3a12944c2fab" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/dictGame_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/dictGame/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dictGame/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/dictGame/db/DictDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dictGame/db/DictDatabase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/dictGame/gui/DictFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dictGame/gui/DictFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/dictGame/gui/DictTab.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dictGame/gui/DictTab.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/dictGame/gui/DictTabPanelAdd$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dictGame/gui/DictTabPanelAdd$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/dictGame/gui/DictTabPanelAdd$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dictGame/gui/DictTabPanelAdd$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/dictGame/gui/DictTabPanelAdd.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dictGame/gui/DictTabPanelAdd.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/dictGame/gui/DictTabPanelChoose$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dictGame/gui/DictTabPanelChoose$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/dictGame/gui/DictTabPanelChoose$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dictGame/gui/DictTabPanelChoose$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/dictGame/gui/DictTabPanelChoose$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dictGame/gui/DictTabPanelChoose$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/dictGame/gui/DictTabPanelChoose.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dictGame/gui/DictTabPanelChoose.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/dictGame/gui/DictTabPanelPlay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dictGame/gui/DictTabPanelPlay.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/dictGame/gui/MyDialog.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dictGame/gui/MyDialog.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/dictGame/model/Question.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dictGame/model/Question.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/dictGame/process/DictProcessAdd.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dictGame/process/DictProcessAdd.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/dictGame/process/DictProcessChoose.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dictGame/process/DictProcessChoose.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/dictGame/process/DictProcessPlay$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dictGame/process/DictProcessPlay$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/dictGame/process/DictProcessPlay$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dictGame/process/DictProcessPlay$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/dictGame/process/DictProcessPlay$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dictGame/process/DictProcessPlay$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/dictGame/process/DictProcessPlay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dictGame/process/DictProcessPlay.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/db/DictDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/DictDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/DictTabPanelPlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/DictTabPanelPlay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/process/DictProcessPlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/process/DictProcessPlay.java" afterDir="false" />
-    </list>
+    <list default="true" id="53f52157-b2ff-4951-b625-3a12944c2fab" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -325,7 +297,7 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.34375" side_tool="true" visible="true" weight="0.424017" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.65625" visible="true" weight="0.424017" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.65625" weight="0.424017" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
