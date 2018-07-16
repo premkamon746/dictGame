@@ -12,6 +12,7 @@ public class DictDatabase
 
     private Question qs = new Question();
     String lang = "thai";
+    int limit = 0;
 
     public DictDatabase(){
 
@@ -21,7 +22,15 @@ public class DictDatabase
         this.lang = lang;
     }
 
-    public Question getData(Vector<String>  vSelectList){
+    public Question getData(Vector<String>  vSelectList,int lev){
+
+        if(lev == 0){
+            limit = 4;
+        }else if(lev == 1) {
+            limit = 7;
+        }else{
+            limit = 0;
+        }
         Connection connect = connect();
         getRandomWord(connect, vSelectList);
         getChoice(connect, qs.getAnswer(), vSelectList);
@@ -252,7 +261,7 @@ public class DictDatabase
 
 
 
-            String sql = "SELECT * FROM GAME WHERE english != '" + answer + "' "+groupSearch+" ORDER BY RANDOM() LIMIT 4";
+            String sql = "SELECT * FROM GAME WHERE english != '" + answer + "' "+groupSearch+" ORDER BY RANDOM() LIMIT "+limit;
             //System.out.println(sql);
             try {
                 statement = connection.createStatement();

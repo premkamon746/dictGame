@@ -20,6 +20,8 @@ public class DictTabPanelPlay extends JPanel
     Vector<String>  vSelectList;
     JLabel jb = new JLabel();
     JToggleButton tgBtn = new JToggleButton("Thai / English");
+    JLabel scoreBoard = new JLabel("Score : 0 / 0 ", SwingConstants.RIGHT);
+    JComboBox lev ;
 
 
     public DictTabPanelPlay(JFrame jf, Vector<String>  vSelectList)
@@ -27,6 +29,8 @@ public class DictTabPanelPlay extends JPanel
         /////
         this.jf = jf;
         this.vSelectList = vSelectList;
+        String[] petStrings = { "Easy", "Normal", "Hard" };
+        lev = new JComboBox(petStrings);
         final DictProcessPlay processPlay = new DictProcessPlay(jf, vSelectList);
 
 
@@ -35,18 +39,27 @@ public class DictTabPanelPlay extends JPanel
 
         jb.setText("Thai");
         tgBtn.setSelected(true);
+
+
         endPanel.add(jb);
         endPanel.add(tgBtn);
         endPanel.add(jt);
         endPanel.add(next);
 
         setLayout(new BorderLayout());
+
+        JPanel north = new JPanel();
+        scoreBoard.setForeground(Color.RED);
+        north.add(lev);
+        north.add(scoreBoard);
+
+        add(north,BorderLayout.NORTH);
         add(list, BorderLayout.CENTER);
         add(endPanel, BorderLayout.PAGE_END);
 
         SwingUtilities.invokeLater(() -> jt.requestFocus());
 
-        processPlay.process(model, list, jt, next);
+        processPlay.process(model, list, jt, next, scoreBoard, lev);
 
         tgBtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

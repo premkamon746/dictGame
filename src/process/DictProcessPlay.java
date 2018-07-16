@@ -25,11 +25,16 @@ public class DictProcessPlay {
     JFrame jf;
     private MyDialog myDialog;
     Vector<String>  vSelectList;
+    int total = 0;
+    int score = 0;
+    JLabel scoreBoard;
+    JComboBox lev;
 
     public DictProcessPlay(JFrame jf,Vector<String> vSelectList)
     {
         this.jf = jf;
         this.vSelectList = vSelectList;
+
         myDialog = new MyDialog(jf, "alert");
     }
 
@@ -41,12 +46,14 @@ public class DictProcessPlay {
         db.setLang("english");
     }
 
-    public void process(DefaultListModel<String> model, JList<String> list, JTextField jt, Button next)
+    public void process(DefaultListModel<String> model, JList<String> list, JTextField jt, Button next,JLabel scoreBoard,JComboBox lev)
     {
         this.model  = model;
         this.list   = list;
         this.jt     = jt;
         this.next   = next;
+        this.scoreBoard = scoreBoard;
+        this.lev    = lev;
         addDataTolist();
 
         next.addActionListener(new ActionListener()
@@ -64,15 +71,20 @@ public class DictProcessPlay {
             public void actionPerformed(ActionEvent ae)
             {
                 //do stuff here when enter pressed
-                if(jt.getText().trim().equals(qs.getAnswer()))
+                total++;
+                String display = "";
+                if(jt.getText().trim().equals(qs.getAnswer().trim()))
                 {
-                    myDialog.setTitle("ok");
+                    score++;
+                    display += "Score : "+score+ " / " +total;
+                    //myDialog.setTitle("ok "+score+" / "+total);
+                }else{
+                    display += "Score : "+score+ " / " +total;
+                    display += " prev answer : "+qs.getAnswer().trim();
                 }
-                else
-                {
-                    myDialog.setTitle("fail");
-                }
-                myDialog.setVisible(true);
+                scoreBoard.setText(display);
+                addDataTolist();
+
             }
         });
 
@@ -98,12 +110,21 @@ public class DictProcessPlay {
 
                         //do stuff here when enter pressed
                         System.out.println(content+" "+qs.getAnswer());
-                        if (content.trim().equals(qs.getAnswer())) {
-                            myDialog.setTitle("ok");
-                        } else {
-                            myDialog.setTitle("fail");
+                        total++;
+                        String display = "";
+                        if(content.equals(qs.getAnswer()))
+                        {
+                            score++;
+                            display += "Score : "+score+ " / " +total;
+                            //myDialog.setTitle("ok "+score+" / "+total);
+                        }else{
+                            display += "Score : "+score+ " / " +total;
+                            display += " prev answer : "+qs.getAnswer().trim();
                         }
-                        myDialog.setVisible(true);
+
+                        //myDialog.setVisible(true);
+                        scoreBoard.setText(display);
+                        addDataTolist();
 
                     }
                     catch (NullPointerException e)
@@ -117,10 +138,15 @@ public class DictProcessPlay {
 
     }
 
+    private void displayScore(){
+
+    }
+
     //get new question
     public void addDataTolist()
     {
-        qs = db.getData(vSelectList);
+
+        qs = db.getData(vSelectList,lev.getSelectedIndex());
         model.clear();
         jt.setText("");
         ArrayList<String> choice  = qs.getItem();

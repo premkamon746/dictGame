@@ -1,9 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="dictGame:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/dictGame_jar</output-path>
-    <root id="archive" name="dictGame.jar">
-      <element id="module-output" name="dictGame" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/library/sqlite-jdbc-3.23.1.jar" path-in-jar="/" />
-    </root>
-  </artifact>
-</component>
